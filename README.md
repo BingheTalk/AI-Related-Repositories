@@ -6,7 +6,7 @@
 
 # 🧭 Skill Scout Builder（Skill 寻构师）
 
-#### 帮 Agent 找 Skill、比 Skill、改 Skill；没有合适的，就安全地造一个。
+#### 你只要会说需求，它就帮你找到、改造或创建能用的 Skill。
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Skills](https://img.shields.io/badge/skills-1-10b981)
@@ -21,7 +21,11 @@
 
 都是在真实 Agent 工作流里跑通后，才整理出来开源的。这个仓库目前收录了一个可移植的 Agent Skill：**Skill Scout Builder（Skill 寻构师）**。
 
-它遵循开放的 Agent Skills 目录格式，让 Codex、Claude Code、OpenCode、OpenClaw 等支持 Skill 的 Agent 可以读取、安装和使用。不同 Agent 的搜索、安装器、市场和审批机制会不一样，但这个 Skill 的核心流程保持可移植。
+很多时候，我们不是不会用 Agent，而是不知道有没有现成 Skill、该搜什么关键词、找到之后能不能直接用，或者该怎么把它改成真正符合自己需求的版本。直接让 AI 从零做一个也经常会遇到问题：需求没说清楚，做出来就不稳定，还要来回改很多版。
+
+**Skill 寻构师**就是为了解决这个问题做的。你只需要把需求告诉它，它会先通过对话把你的想法挖清楚，整理成一份明确的需求简报；然后搜索本地、GitHub、公开来源和当前 Agent 能访问的 Skill 渠道；再把候选 Skill 和你的需求逐项对比，判断是直接使用、基于现有 Skill 改造，还是重新创建一个。
+
+从说出一句需求，到拿到一个经过测试和安全审计的可用 Skill，全程可以不写一行代码。
 
 ---
 
@@ -29,7 +33,7 @@
 
 | 名字 | 一句话 | 入口 |
 | --- | --- | --- |
-| `skill-scout-builder`（Skill 寻构师） | 通过对话澄清需求，搜索并比较已有 Skill，最后安全安装、定制或创建新的可复用 Skill | [SKILL.md](skill-scout-builder/SKILL.md) |
+| `skill-scout-builder`（Skill 寻构师） | 通过对话挖掘需求，搜索和比较已有 Skill，并安全地使用、改造或创建真正符合需求的可复用 Skill | [SKILL.md](skill-scout-builder/SKILL.md) |
 
 ---
 
@@ -85,11 +89,13 @@ cp -R AI-Related-Repositories/skill-scout-builder .claude/skills/
 
 ## ✨ Skill Scout Builder（Skill 寻构师）
 
-> “先别急着造轮子。让 Agent 先帮你找一圈：有没有现成 Skill、哪个最接近、能不能安全改；实在没有，再造一个。”
+> “你只需要会说，就能得到你需要的 Skill。”
 
-这个 Skill 解决的是一个很常见的问题：你知道自己想让 Agent 多一种能力，但不知道应该找现成 Skill、改别人的 Skill，还是从零写一个。
+Skill 寻构师解决的是“我有一个需求”和“我有一个能用的工具”之间的那道门槛。
 
-它会先用自然对话把模糊想法整理成需求简报，然后自动搜索当前会话、本地目录、宿主市场、Git 仓库和公开来源中的候选 Skill。找到候选后，它会按需求匹配、环境兼容、依赖、安全性和可维护性做比较，最后让你选择：直接使用、定制候选、看另一个候选，或创建新 Skill。
+以前我们想让 Agent 获得一个新能力，通常要先去 Skill 市场或 GitHub 里碰运气搜关键词。问题是，关键词不准就很难找到合适的 Skill；即使找到了，也不知道它能不能安全使用，或者是不是还需要改造。更麻烦的是，如果直接让 AI 从零做，而需求和逻辑一开始没有想清楚，最后做出来的 Skill 往往还要反复修改。
+
+Skill 寻构师会先和你对话，把需求问清楚、提炼清楚，再去搜索和比较现有 Skill。能直接用就直接用，差一点就改造，没有合适的再创建新的。交付前，它还会做测试和安全审计，尽量确保你拿到的是一个真的能用、也更安全的 Skill。
 
 ### 它能做什么
 
@@ -199,7 +205,7 @@ Made by [@BingheTalk](https://github.com/BingheTalk)
 
 # 🧭 Skill Scout Builder
 
-#### Help your agent find, compare, adapt, or safely create reusable Skills.
+#### Describe what you need. It finds, adapts, or creates the right Skill for you.
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Skills](https://img.shields.io/badge/skills-1-10b981)
@@ -212,9 +218,13 @@ Made by [@BingheTalk](https://github.com/BingheTalk)
 
 </div>
 
-This repository contains **Skill Scout Builder**, a portable Agent Skill that has been shaped through real agent workflows.
+This repository currently contains **Skill Scout Builder**, a portable Agent Skill shaped through real agent workflows.
 
-It follows the open Agent Skills directory format so compatible hosts such as Codex, Claude Code, OpenCode, and OpenClaw can read, install, and use it. Host-specific search, installation, marketplace, and approval capabilities may differ, but the core workflow is designed to stay portable.
+The hard part of using Agent Skills is often not writing code. It is knowing whether a suitable Skill already exists, what keywords to search for, whether a candidate can be trusted, and how to adapt it to your actual workflow. Starting from scratch with AI can also be unreliable when the requirement is still vague.
+
+**Skill Scout Builder** solves this by turning a rough idea into a usable Skill workflow. You describe what you need in natural language. It clarifies the requirement through a lightweight conversation, turns it into a concise brief, searches local Skills, GitHub, public sources, and host-accessible Skill channels, then compares candidates against your real needs. Finally, it helps you decide whether to use an existing Skill, adapt a close match, or create a new one.
+
+From one spoken requirement to a tested and safety-reviewed Skill, you can get the tool you need without writing a single line of code.
 
 ---
 
@@ -222,7 +232,7 @@ It follows the open Agent Skills directory format so compatible hosts such as Co
 
 | Name | One-liner | Entry |
 | --- | --- | --- |
-| `skill-scout-builder` | Clarify a need, search and compare existing Skills, then safely install, adapt, or create a reusable Skill | [SKILL.md](skill-scout-builder/SKILL.md) |
+| `skill-scout-builder` | Clarify a rough need, search and compare existing Skills, then safely use, adapt, or create a reusable Skill that actually fits | [SKILL.md](skill-scout-builder/SKILL.md) |
 
 ---
 
@@ -278,11 +288,13 @@ cp -R AI-Related-Repositories/skill-scout-builder .claude/skills/
 
 ## ✨ Skill Scout Builder
 
-> “Before building a new wheel, ask the agent to search: is there an existing Skill, which one is closest, can it be adapted safely, or should we create a new one?”
+> “If you can describe what you need, you can get the Skill you need.”
 
-Skill Scout Builder helps when you know what capability you want your agent to gain, but you do not yet know whether to find an existing Skill, adapt a close match, or create a new one.
+Skill Scout Builder bridges the gap between “I have a need” and “I have a working tool.”
 
-It first turns a vague idea into a concise requirement brief through a lightweight conversation. Then it searches visible Skills, local Skill directories, host-native catalogs, Git repositories, and public sources. For serious candidates, it compares fit, dependencies, environment compatibility, maintainability, and safety before asking you to choose: use directly, adapt, inspect another candidate, or create a new Skill.
+When we want an agent to gain a new capability, we often start by searching a Skill marketplace or GitHub with rough keywords. The problem is that the right Skill is hard to find when the keywords are off. Even when a candidate appears, it is not always clear whether it is safe to use or whether it needs adaptation. Starting from scratch with AI can be just as messy when the requirement and logic are not clear enough at the beginning.
+
+Skill Scout Builder first talks with you to clarify and refine the requirement, then searches and compares existing Skills. If one fits, use it. If one is close, adapt it. If none fits, create a new one. Before delivery, it runs tests and a safety audit so the final Skill is more likely to be both usable and safe.
 
 ### What it does
 
