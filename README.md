@@ -26,20 +26,38 @@ Skill Scout Builder is a portable Agent Skill that helps users clarify what they
 
 ## 安装
 
-### Codex
+### 一句话安装
+
+在 Codex、Claude Code、OpenClaw 等支持从 GitHub URL 安装 Skill 的 Agent 里，直接对 Agent 说：
+
+```text
+帮我安装这个 skill: https://github.com/BingheTalk/AI-Related-Repositories/tree/main/skill-scout-builder
+```
+
+或使用英文：
+
+```text
+Install this skill: https://github.com/BingheTalk/AI-Related-Repositories/tree/main/skill-scout-builder
+```
+
+Agent 会根据自己的 Skill 目录规则下载安装到合适位置。若当前 Agent 不支持 URL 安装，请使用下面的手动安装方式。
+
+### 手动安装：Codex
 
 用户级安装：
 
 ```bash
+git clone https://github.com/BingheTalk/AI-Related-Repositories.git
 mkdir -p ~/.agents/skills
-cp -R skill-scout-builder ~/.agents/skills/
+cp -R AI-Related-Repositories/skill-scout-builder ~/.agents/skills/
 ```
 
 项目级安装：
 
 ```bash
+git clone https://github.com/BingheTalk/AI-Related-Repositories.git
 mkdir -p .agents/skills
-cp -R skill-scout-builder .agents/skills/
+cp -R AI-Related-Repositories/skill-scout-builder .agents/skills/
 ```
 
 调用示例：
@@ -48,20 +66,22 @@ cp -R skill-scout-builder .agents/skills/
 $skill-scout-builder 帮我找一个能整理访谈录音并生成选题的 Skill
 ```
 
-### Claude Code
+### 手动安装：Claude Code
 
 用户级安装：
 
 ```bash
+git clone https://github.com/BingheTalk/AI-Related-Repositories.git
 mkdir -p ~/.claude/skills
-cp -R skill-scout-builder ~/.claude/skills/
+cp -R AI-Related-Repositories/skill-scout-builder ~/.claude/skills/
 ```
 
 项目级安装：
 
 ```bash
+git clone https://github.com/BingheTalk/AI-Related-Repositories.git
 mkdir -p .claude/skills
-cp -R skill-scout-builder .claude/skills/
+cp -R AI-Related-Repositories/skill-scout-builder .claude/skills/
 ```
 
 调用示例：
