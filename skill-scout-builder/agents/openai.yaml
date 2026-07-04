@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill 寻构师"
+  short_description: "Find, compare, tailor, or build portable Agent Skills safely"
+  default_prompt: "Use $skill-scout-builder to clarify my needs and find or build the best matching Skill."
